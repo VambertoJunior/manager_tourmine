@@ -1,0 +1,22 @@
+<div class="torneio-card">
+  <h1>Inscrições no Torneio: <%= @torneio.nome %></h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Participante</th>
+        <th>Data da Inscrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @inscricoes.each do |inscricao| %>
+        <tr>
+          <td><%= inscricao.usuario.nome %></td>
+          <td><%= inscricao.data_hora %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to 'Voltar', torneio_path(@torneio), class: 'btn btn-secondary' %>
+</div>

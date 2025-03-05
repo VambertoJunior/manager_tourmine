@@ -1,0 +1,22 @@
+<div class="torneio-card">
+  <h1>Torneios</h1>
+
+  <% if current_usuario.perfil == 'Organizador' %>
+    <%= link_to 'Novo Torneio', new_torneio_path, class: 'btn btn-primary' %>
+    <%= link_to 'Gerenciar Usuários', usuarios_path, class: 'btn btn-secondary' %>
+  <% end %>
+
+  <ul class="torneio-list">
+    <% @torneios.each do |torneio| %>
+      <li>
+        <%= link_to torneio.nome, torneio %>
+        <div class="actions">
+          <% if current_usuario.perfil == 'Organizador' %>
+            <%= link_to 'Editar', edit_torneio_path(torneio), class: 'btn btn-secondary' %>
+            <%= button_to 'Excluir', torneio, method: :delete, data: { confirm: 'Tem certeza?', turbo: false }, class: 'btn btn-danger' %>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

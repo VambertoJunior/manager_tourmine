@@ -1,0 +1,227 @@
+/* Estilos Globais */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000000; /* Fundo preto */
+  color: #e5e7eb; /* Texto claro */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+a {
+  color: #3b82f6; /* Azul claro para links */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #60a5fa; /* Azul mais claro no hover */
+  text-decoration: underline;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Barra de Navegação */
+header {
+  background-color: #111827; /* Fundo escuro para o header */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav a {
+  color: #e5e7eb; /* Texto claro */
+  margin: 0 10px;
+  font-weight: 600;
+}
+
+header nav a.btn {
+  background-color: #3b82f6; /* Azul para botões */
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+header nav a.btn:hover {
+  background-color: #2563eb; /* Azul mais escuro no hover */
+}
+
+/* Botões */
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #3b82f6; /* Azul */
+  color: #ffffff;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary {
+  background-color: #4b5563; /* Cinza escuro */
+}
+
+.btn-secondary:hover {
+  background-color: #374151; /* Cinza mais escuro no hover */
+}
+
+.btn-danger {
+  background-color: #ef4444; /* Vermelho */
+}
+
+.btn-danger:hover {
+  background-color: #dc2626; /* Vermelho mais escuro no hover */
+}
+
+/* Cards */
+.card {
+  background-color: #1f2937; /* Fundo escuro para cards */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card h1, .card h2 {
+  color: #3b82f6; /* Azul para títulos */
+  margin-top: 0;
+}
+
+.card p {
+  color: #e5e7eb; /* Texto claro */
+  margin: 10px 0;
+}
+
+.card .actions {
+  margin-top: 20px;
+}
+
+.card .actions a {
+  margin-right: 10px;
+}
+
+/* Lista de Torneios */
+.torneio-list {
+  list-style: none;
+  padding: 0;
+}
+
+.torneio-list li {
+  background-color: #252323; /* Fundo escuro para itens da lista */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.torneio-list li a {
+  color: #3b82f6; /* Azul para links */
+  font-weight: 600;
+}
+
+.torneio-list li .actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Formulários */
+form {
+  background-color: #1f2937; /* Fundo escuro para formulários */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+form .field {
+  margin-bottom: 15px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #e5e7eb; /* Texto claro */
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #374151; /* Bordas cinza */
+  border-radius: 6px;
+  background-color: #111827; /* Fundo escuro para inputs */
+  color: #e5e7eb; /* Texto claro */
+  transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #3b82f6; /* Azul no foco */
+  outline: none;
+}
+
+form .actions {
+  margin-top: 20px;
+}
+
+/* Mensagens de Erro */
+#error_explanation {
+  background-color: #7f1d1d; /* Vermelho escuro */
+  color: #fecaca; /* Texto claro */
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+#error_explanation h2 {
+  font-size: 16px;
+  margin-top: 0;
+}
+
+#error_explanation ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header nav a {
+    margin: 5px 0;
+  }
+
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}

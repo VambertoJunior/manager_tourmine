@@ -1,0 +1,43 @@
+<div class="torneio-form">
+  <%= form_with(model: torneio, local: true) do |form| %>
+    <% if torneio.errors.any? %>
+      <div id="error_explanation" class="card">
+        <h2><%= pluralize(torneio.errors.count, "erro") %> impediram este torneio de ser salvo:</h2>
+        <ul>
+          <% torneio.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :nome %>
+      <%= form.text_field :nome, class: 'form-control' %>
+    </div>
+
+    <div class="field">
+      <%= form.label :descricao %>
+      <%= form.text_area :descricao, class: 'form-control' %>
+    </div>
+
+    <div class="field">
+      <%= form.label :data_inicio %>
+      <%= form.datetime_field :data_inicio, class: 'form-control' %>
+    </div>
+
+    <div class="field">
+      <%= form.label :data_fim %>
+      <%= form.datetime_field :data_fim, class: 'form-control' %>
+    </div>
+
+    <div class="field">
+      <%= form.label :status %>
+      <%= form.select :status, ['ativo', 'inativo'], {}, class: 'form-control' %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit 'Salvar', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

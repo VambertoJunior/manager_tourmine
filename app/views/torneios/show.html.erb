@@ -1,0 +1,21 @@
+<div class="torneio-card">
+  <h1><%= @torneio.nome %></h1>
+  <p><%= @torneio.descricao %></p>
+  <p>Status: <%= @torneio.status %></p>
+  <p>Data de início: <%= @torneio.data_inicio %></p>
+  <p>Data de fim: <%= @torneio.data_fim %></p>
+
+  <div class="actions">
+    <% if current_usuario.perfil == 'Organizador' %>
+      <%= link_to 'Editar', edit_torneio_path(@torneio), class: 'btn btn-secondary' %>
+      <%= link_to 'Excluir', @torneio, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn btn-danger' %>
+      <%= link_to 'Ver Inscrições', inscricoes_torneio_path(@torneio), class: 'btn btn-primary' %>
+    <% end %>
+
+    <% if current_usuario && current_usuario.perfil == 'Participante' && @torneio.pode_inscrever? %>
+      <%= button_to 'Participar', inscrever_torneio_path(@torneio), method: :post, class: 'btn btn-primary' %>
+    <% end %>
+
+    <%= link_to 'Voltar', torneios_path, class: 'btn btn-secondary' %>
+  </div>
+</div>

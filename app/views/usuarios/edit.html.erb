@@ -1,0 +1,29 @@
+<h1>Editar Usuário</h1>
+
+<%= form_with model: @usuario, local: true do |form| %>
+  <div>
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+  <div>
+    <%= form.label :perfil %>
+    <%= form.select :perfil, ['Organizador', 'Participante'] %>
+  </div>
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+  <div>
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+  </div>
+  <div>
+    <%= form.submit 'Atualizar Usuário' %>
+  </div>
+<% end %>
+
+<%= link_to 'Voltar', usuarios_path %>

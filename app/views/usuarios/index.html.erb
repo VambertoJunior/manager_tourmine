@@ -1,0 +1,34 @@
+<div class="card">
+  <h1>Usuários</h1>
+
+  <% if current_usuario.perfil == 'Organizador' %>
+    <%= link_to 'Novo Usuário', new_usuario_path, class: 'btn btn-primary' %>
+  <% end %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Perfil</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @usuarios.each do |usuario| %>
+        <tr>
+          <td><%= usuario.nome %></td>
+          <td><%= usuario.email %></td>
+          <td><%= usuario.perfil %></td>
+          <td>
+            <%= link_to 'Ver', usuario, class: 'btn btn-secondary' %>
+            <% if current_usuario.perfil == 'Organizador' %>
+              <%= link_to 'Editar', edit_usuario_path(usuario), class: 'btn btn-secondary' %>
+              <%= link_to 'Excluir', usuario, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn btn-danger' %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
