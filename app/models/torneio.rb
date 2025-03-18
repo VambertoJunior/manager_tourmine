@@ -1,6 +1,6 @@
 class Torneio < ApplicationRecord
-    has_many :inscricoes, dependent: :destroy
-    has_many :participantes, through: :inscricoes, source: :usuario
+    has_many :inscricao, dependent: :destroy
+    has_many :participantes, through: :inscricao, source: :usuario
   
     validates :nome, presence: true
     validates :descricao, presence: true

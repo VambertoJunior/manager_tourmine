@@ -2,7 +2,7 @@
   <h1>Usuários</h1>
 
   <% if current_usuario.perfil == 'Organizador' %>
-    <%= link_to 'Novo Usuário', new_usuario_path, class: 'btn btn-primary' %>
+    
   <% end %>
 
   <table>
@@ -24,7 +24,7 @@
             <%= link_to 'Ver', usuario, class: 'btn btn-secondary' %>
             <% if current_usuario.perfil == 'Organizador' %>
               <%= link_to 'Editar', edit_usuario_path(usuario), class: 'btn btn-secondary' %>
-              <%= link_to 'Excluir', usuario, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn btn-danger' %>
+              <%= button_to 'Excluir', usuario, method: :delete, data: { confirm: 'Tem certeza?', turbo: false }, class: 'btn btn-danger' %>
             <% end %>
           </td>
         </tr>
